@@ -139,8 +139,63 @@ footer{padding:25px 0}
  .actions .btn{padding:10px 12px}
 }
 
+
+/* Vice City palette: restrained neon, ocean blue and sunset coral */
+:root{--bg:#0b1422;--panel:#111f31;--panel2:#172b40;--line:#294052;--text:#edf4f5;--muted:#9aadb9;--gold:#65d5d0;--lime:#f29ab8;--vc-pink:#f08db5;--vc-coral:#ff9b7a;--vc-blue:#65d5d0}
+body{background:var(--bg);color:var(--text)}
+.topline{background:linear-gradient(90deg,#56cfcf 0%,#8badd1 38%,#ed8fb8 72%,#ff9b7a 100%)}
+header{background:rgba(10,20,34,.94);border-color:#263d50}
+.brand span{color:var(--vc-pink)}
+nav a:hover,nav a.active{color:var(--vc-pink)}
+.search{background:#122238;border-color:#29465b;color:var(--text)}
+.search:focus{border-color:var(--vc-blue)}
+.hero{background:linear-gradient(90deg,rgba(7,16,29,.96) 0%,rgba(8,20,35,.78) 46%,rgba(10,25,40,.2) 100%),linear-gradient(0deg,var(--bg) 0%,transparent 46%),url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=2000&q=85') center 48%/cover}
+.hero h1 em{color:var(--vc-pink)}
+.eyebrow,.kicker,.tile .index,.card .tag,.character .role{color:var(--vc-blue)}
+.btn,.map-link{background:var(--vc-pink);border-color:var(--vc-pink);color:#172033}
+.btn.ghost{background:rgba(10,20,34,.28);color:var(--text);border-color:#6c8295}
+.stats{background:#101e30;border-color:var(--line)}
+.stat strong{color:var(--vc-pink)}
+.section.dark{background:#0e1a2b;border-color:var(--line)}
+.tile,.character{background:linear-gradient(145deg,#172a40,#101d2d);border-color:var(--line)}
+.tile:hover{border-color:var(--vc-pink)}
+.feature,.card,.county,.region-card,.official-map{background:var(--panel);border-color:var(--line)}
+.feature a.more,.card a,.character a,.back{color:var(--vc-pink)}
+.pagehead{background:linear-gradient(110deg,#142b42 0%,#101b2d 55%,#0b1422 100%);border-color:var(--line)}
+.callout{background:#14253a;border-left-color:var(--vc-pink);color:#b7c8d1}
+.map-panel{background:#101e30;border-color:var(--line)}
+.map-art{background:radial-gradient(ellipse at 45% 42%,#387b78 0%,#244c59 32%,#172f42 58%,#101a2a 76%)}
+.map-art:before,.map-art:after{border-color:#77d9d077}
+.map-label{color:#e8d5df}
+.region-card img{filter:saturate(.88)}
+.place-chip{background:#14253a;border-color:var(--line);color:#dce9ed}
+.empty{border-color:var(--line)}
+footer{border-color:var(--line)}
+/* Compact, informative navigation */
+.head{gap:20px}
+nav{gap:clamp(10px,1.35vw,18px)}
+nav a,.nav-more summary{font-size:10px;letter-spacing:.65px;white-space:nowrap}
+.nav-more{position:relative;color:#b4c6d0;cursor:pointer}
+.nav-more summary{list-style:none;text-transform:uppercase;cursor:pointer;padding:9px 11px;border:1px solid transparent;border-radius:999px}
+.nav-more summary::-webkit-details-marker{display:none}
+.nav-more summary span{color:var(--vc-pink);margin-left:4px}
+.nav-more[open] summary,.nav-more summary:hover{border-color:#38556a;color:var(--vc-pink)}
+.nav-dropdown{position:absolute;right:0;top:calc(100% + 10px);min-width:190px;padding:8px;background:#122238;border:1px solid #355064;border-radius:15px;box-shadow:0 16px 40px #0008;display:grid;gap:2px;z-index:30}
+.nav-dropdown a{display:block;padding:10px 12px;border-radius:9px;font-size:10px;letter-spacing:.3px;text-transform:none;color:#c4d2d9}
+.nav-dropdown a:hover{background:#1b354b;color:var(--vc-pink)}
+@media(max-width:900px){.head{gap:12px}nav{gap:9px}.nav-dropdown{right:auto;left:0}}
+@media(max-width:650px){
+ .head{gap:9px}
+ nav{gap:7px;scrollbar-width:none}
+ nav::-webkit-scrollbar{display:none}
+ nav a,.nav-more summary{font-size:9px;letter-spacing:.35px}
+ .nav-more summary{padding:7px 9px}
+ .nav-dropdown{position:fixed;top:116px;left:16px;right:16px;min-width:0;grid-template-columns:repeat(2,minmax(0,1fr));padding:9px;border-radius:14px}
+ .nav-dropdown a{font-size:10px;padding:11px 9px}
+ .hero{background-image:linear-gradient(90deg,rgba(7,16,29,.94),rgba(8,20,35,.55)),linear-gradient(0deg,var(--bg),transparent 48%),url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1200&q=80')}
+}
 </style></head><body><div class="topline"></div>
-<header><div class="head"><a class="brand" href="#/">LEONIDA<span>.</span></a><nav id="nav"><a href="#/characters">Персонажи</a><a href="#/map">Карта</a><a href="#/vehicles">Транспорт</a><a href="#/weapons">Оружие</a><a href="#/locations">Локации</a><a href="#/guides">Руководства</a></nav><input id="search" class="search" placeholder="Поиск по базе ↵" aria-label="Поиск по базе"></div></header>
+<header><div class="head"><a class="brand" href="#/">LEONIDA<span>.</span></a><nav id="nav"><a href="#/">Главная</a><a href="#/characters">Персонажи</a><a href="#/map">Карта</a><a href="#/locations">Локации</a><a href="#/vehicles">Транспорт</a><a href="#/weapons">Оружие</a><details class="nav-more"><summary>Ещё <span>＋</span></summary><div class="nav-dropdown"><a href="#/story">Сюжет и миссии</a><a href="#/activities">Активности</a><a href="#/wildlife">Животные</a><a href="#/radio">Радио</a><a href="#/property">Недвижимость</a><a href="#/collectibles">Коллекции</a><a href="#/guides">Руководства</a></div></details></nav><input id="search" class="search" placeholder="Поиск по базе ↵" aria-label="Поиск по базе"></div></header>
 <main id="app"></main><footer><div class="wrap foot"><span>LEONIDA DATABASE · FAN PROJECT</span><span>Неофициальный проект. Не связан с Rockstar Games или Take-Two Interactive.</span><span>© 2026</span></div></footer>
 <script>
 const app=document.getElementById('app');
